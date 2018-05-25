@@ -45,15 +45,16 @@ for counter in 1...countOfExpectedSpecsThatWillBeProvided {
         // If someone enters nil input, just skip to the next line
         continue
     }
-    
+    // split the input into individual pieces
     let givenInputPieces = givenInput.split(separator: " ")
+   // make sure the pieces are in right order
     let computerName = String(givenInputPieces[0])
     let computerRAM = Int(givenInputPieces[1])
     let computerCPU = Int(givenInputPieces[2])
     let computerDriveSpace = Int(givenInputPieces[3])
-   
+  // unwrap
    let specResult =  2 * computerRAM! + 3 * computerCPU! + computerDriveSpace!
-   
+   // find the maximum amount 
     if specResult > bestComputerSpec {
         bestComputerSpec = specResult
         bestComputerName = computerName
